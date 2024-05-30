@@ -51,6 +51,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :GBrowse
 Plug 'tomasiser/vim-code-dark'
+"Plug 'nvimtools/none-ls.nvim'
+" Plug 'rhysd/vim-clang-format'
+Plug 'vim-autoformat/vim-autoformat'
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -536,6 +539,22 @@ let g:python3_host_prog = '/usr/bin/python3'
 "compile
 nmap <Leader>m :wa<CR>:make install<CR><CR>:cw<CR>
 
+"format config
+let g:formatterpath = ['/usr/bin/clang-format']
+let g:formatdef_my_clangformat_objc = '"clang-format --style=Google"'
+let g:formatters_c = ['my_clangformat_objc']
+
+noremap <C-s> :Autoformat<CR>
+" let g:clangformat#command = "/usr/bin/clang-format"
+" let g:clang_format#detect_style_file=1
+
+" map to <Leader>cf in C++ code
+"autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+" autocmd FileType c,cpp,objc vnoremap <buffer><C-s> :ClangFormat<CR>
+" if you install vim-operator-user
+"autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
+" Toggle auto formatting:
+"nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 
 
