@@ -408,10 +408,11 @@ if has('macunix')
 endif
 
 "" Buffer nav
-noremap <leader>z :bp<CR>
-noremap <leader>q :bp<CR>
-noremap <leader>x :bn<CR>
-noremap <leader>w :bn<CR>
+"noremap <leader>z :bp<CR>
+"noremap <leader>q :bp<CR>
+"noremap <leader>x :bn<CR>
+"noremap <leader>w :bn<CR>
+noremap <leader>n :bn<CR>
 
 "" Close buffer
 noremap <leader>c :bd<CR>
@@ -503,9 +504,9 @@ endif
 
 " YCM 补全菜单配色
 " 菜单
-highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
+"highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
 " 选中项
-highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#d700b7 guibg=#106900
 " 补全功能在注释中同样有效
 let g:ycm_complete_in_comments=1
 " 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
@@ -532,7 +533,8 @@ let g:python3_host_prog = '/usr/bin/python3'
 "let g:loaded_python3_provider = NULL 
 
 
-
+"compile
+nmap <Leader>m :wa<CR>:make install<CR><CR>:cw<CR>
 
 
 
