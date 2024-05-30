@@ -54,7 +54,7 @@ Plug 'tomasiser/vim-code-dark'
 "Plug 'nvimtools/none-ls.nvim'
 " Plug 'rhysd/vim-clang-format'
 Plug 'vim-autoformat/vim-autoformat'
-
+Plug 'APZelos/blamer.nvim'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -559,7 +559,8 @@ imap <C-k> <C-o>:py3f /home/arthur/code/nvim-config-c/clang-format.py<CR>
 " Toggle auto formatting:
 "nmap <Leader>C :ClangFormatAutoToggle<CR>
 
-
+"blamer
+let g:blamer_enabled = 1
 
 
 
