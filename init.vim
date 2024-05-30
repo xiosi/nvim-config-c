@@ -541,10 +541,13 @@ nmap <Leader>m :wa<CR>:make install<CR><CR>:cw<CR>
 
 "format config
 let g:formatterpath = ['/usr/bin/clang-format']
-let g:formatdef_my_clangformat_objc = '"clang-format --style=Google"'
+let g:formatdef_my_clangformat_objc = '"clang-format --style=file"'
 let g:formatters_c = ['my_clangformat_objc']
 
 noremap <C-s> :Autoformat<CR>
+"for ClangFormat test
+map <C-k> :py3f /home/arthur/code/nvim-config-c/clang-format.py<CR>
+imap <C-k> <C-o>:py3f /home/arthur/code/nvim-config-c/clang-format.py<CR>
 " let g:clangformat#command = "/usr/bin/clang-format"
 " let g:clang_format#detect_style_file=1
 
@@ -555,6 +558,7 @@ noremap <C-s> :Autoformat<CR>
 "autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
 " Toggle auto formatting:
 "nmap <Leader>C :ClangFormatAutoToggle<CR>
+
 
 
 
