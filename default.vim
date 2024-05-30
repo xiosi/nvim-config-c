@@ -152,6 +152,9 @@ let g:session_command_aliases = 1
 syntax on
 set ruler
 set number
+" 高亮显示当前行/列
+set cursorline
+set cursorcolumn
 
 let no_buffers_menu=1
 colorscheme codedark
