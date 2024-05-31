@@ -51,7 +51,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :GBrowse
 Plug 'tomasiser/vim-code-dark'
-"Plug 'nvimtools/none-ls.nvim'
 " Plug 'rhysd/vim-clang-format'
 Plug 'vim-autoformat/vim-autoformat'
 Plug 'APZelos/blamer.nvim'
@@ -83,7 +82,8 @@ Plug 'honza/vim-snippets'
 " c
 Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-treesitter/nvim-treesitter'
 
 " vuejs
 Plug 'posva/vim-vue'
@@ -540,8 +540,8 @@ let g:python3_host_prog = '/usr/bin/python3'
 nmap <Leader>m :wa<CR>:make install<CR><CR>:cw<CR>
 " Define a dictionary with custom make commands
 let g:makedict = {
-      \ '1': "make install",
-      \ '2': "make clean"
+      \ '1': "make viddriver-rebuild all",
+      \ '2': "make hudi-rebuild all"
       \ }
 
 " Define the custom MakeExecute function
@@ -569,8 +569,8 @@ let g:formatters_c = ['my_clangformat_objc']
 
 noremap <C-s> :Autoformat<CR>
 "for ClangFormat test
-map <C-k> :py3f /home/arthur/code/nvim-config-c/clang-format.py<CR>
-imap <C-k> <C-o>:py3f /home/arthur/code/nvim-config-c/clang-format.py<CR>
+map <C-k> :py3f /data/home/arthur.wen/code/mine/nvim-config-c/clang-format.py<CR>
+imap <C-k> <C-o>:py3f /data/home/arthur.wen/code/mine/nvim-config-c/clang-format.py<CR>
 " let g:clangformat#command = "/usr/bin/clang-format"
 " let g:clang_format#detect_style_file=1
 
