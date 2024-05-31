@@ -167,7 +167,7 @@ colorscheme codedark
 set wildmenu
 
 " mouse support
-set mouse=a
+set mouse=v
 
 set mousemodel=popup
 set t_Co=256
@@ -259,6 +259,7 @@ nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 " grep.vim
 nnoremap <silent> <leader>f :Rg<CR>
+nnoremap <C-f> :Rg <C-R><C-W><CR>
 let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'

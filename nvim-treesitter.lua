@@ -1,3 +1,4 @@
+-- ~/.config/nvim/after/plugin/nvim-treesitter.lua
 local status, treesitter = pcall(require, "nvim-treesitter.configs")
 if (not status) then
   return
