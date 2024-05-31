@@ -585,6 +585,12 @@ imap <C-k> <C-o>:py3f /data/home/arthur.wen/code/mine/nvim-config-c/clang-format
 "blamer
 let g:blamer_enabled = 1
 
+" Use <Tab> and <S-Tab> to navigate the completion list
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" Use <Ctrl-F> to format documents with prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" noremap <C-F> :Prettier<CR>
 
 
 
