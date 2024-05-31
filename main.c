@@ -20,7 +20,6 @@ int funcc(void)
 int main()
 {
     printf("tt");
-
     /* tt */
 
     return 0;

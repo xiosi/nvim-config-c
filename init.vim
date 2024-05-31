@@ -538,6 +538,29 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 "compile
 nmap <Leader>m :wa<CR>:make install<CR><CR>:cw<CR>
+" Define a dictionary with custom make commands
+let g:makedict = {
+      \ '1': "make install",
+      \ '2': "make clean"
+      \ }
+
+" Define the custom MakeExecute function
+function! MakeExecute(command)
+    if has_key(g:makedict, a:command)
+        let cmd = g:makedict[a:command]
+    else
+        let cmd = "echo \"Invalid argument\""
+    endif
+    " Use cexpr to execute the command and capture its output for the quickfix list
+    cexpr system(cmd)
+    " Open the quickfix window if there are errors
+    if !empty(filter(getqflist(), 'v:val["valid"] == 0'))
+        copen
+    endif
+endfunction
+
+" Override the existing :make command
+command! -nargs=1 Make call MakeExecute(<q-args>)
 
 "format config
 let g:formatterpath = ['/usr/bin/clang-format']
