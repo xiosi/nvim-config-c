@@ -597,7 +597,12 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " noremap <C-F> :Prettier<CR>
 
-
+"coc.vim
+" Make <C-space> trigger completion    You, 05/06/24 10:45 • Uncommitted changes
+"inoremap <silent><expr> <C-space> coc#refresh()
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice.
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 
 
