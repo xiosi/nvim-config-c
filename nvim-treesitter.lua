@@ -22,7 +22,8 @@ treesitter.setup {
     "yaml",
     -- "swift",
     "html",
-    "scss"
+    "scss",
+    "c"
   }
 }
 

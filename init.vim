@@ -375,7 +375,7 @@ cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>e :FZF -m<CR>
 "Recovery commands from history through FZF
-nmap <leader>y :History:<CR>
+" nmap <leader>y :History:<CR>
 
 " snippets
 let g:UltiSnipsExpandTrigger="<C-e>"
@@ -402,8 +402,11 @@ if has('unnamedplus')
 endif
 
 noremap YY "+y<CR>
-noremap <leader>p "+gP<CR>
+" noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
+noremap <leader>y "ay
+noremap <leader>p "ap
+
 
 if has('macunix')
   " pbcopy for OSX copy/paste
@@ -446,6 +449,7 @@ nnoremap <Leader>o :.GBrowse<CR>
 "*****************************************************************************
 
 " c
+autocmd BufNewFile,BufRead *.h set filetype=c
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 
