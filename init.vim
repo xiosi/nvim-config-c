@@ -340,9 +340,9 @@ nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 
 "" Tabs
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
-nnoremap <silent> <S-t> :tabnew<CR>
+" nnoremap <Tab> gt
+" nnoremap <S-Tab> gT
+" nnoremap <silent> <S-t> :tabnew<CR>
 
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
@@ -591,8 +591,8 @@ imap <C-k> <C-o>:py3f /data/home/arthur.wen/code/mine/nvim-config-c/clang-format
 let g:blamer_enabled = 1
 
 " Use <Tab> and <S-Tab> to navigate the completion list
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Use <Ctrl-F> to format documents with prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " noremap <C-F> :Prettier<CR>
@@ -602,7 +602,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 "inoremap <silent><expr> <C-space> coc#refresh()
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
-inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 
 
